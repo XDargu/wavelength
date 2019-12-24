@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        html, body {
+            margin: 0;
+			paddng: 0;
+			overflow: hidden;
+			background-color: #111;
+			color: #ccc;
+			font-family: monospace;
+        }
+		
+        .paused #canvas {
+            border: 2px dashed red; 
+        }
+		
+		#jumpToCoord, #jumpRand, #explorePlanet {
+			cursor: pointer;
+		}
+		
+		#jumpToCoord:hover, #jumpRand:hover, #explorePlanet:hover {
+			background-color: #eee;
+			color: #333;
+		}
+		
+		#coordControls {
+			position: absolute;
+			margin: 10px;
+			top: 0;
+		}
+		
+		#coordControls input {
+			font-family: inherit;
+			background-color: #333;
+			color: #eee;
+			border: 1px solid #555;
+			padding-left: 2px;
+		}
+		
+		#resources {
+			position: absolute;
+			margin: 10px;
+			bottom: 30%;
+		}
+		
+		#planetData {
+			position: absolute;
+			margin: 10px;
+			top: 0;
+			right: 0;
+		}
+		
+    </style>
+	<canvas id="canvas" width="800" height="400"></canvas>
+	<div id="coordControls">
+		Coordinates: <input type="text" id="addressInput" value="000000000"><br><br>
+		<input type="button" id="jumpToCoord" value="Jump to coordinates (10 fuel)"><br><br>
+		<input type="button" id="jumpRand" value="Jump randomly (5 fuel)"><br><br>
+		<input type="button" id="explorePlanet" value="Explore Planet (5 food)"><br>
+	</div>
+	<div id="resources">
+		<table>
+		<tr>
+			<td>Fuel</td>
+			<td><progress max="150" value="100" id="fuelBar"></progress></td>
+		</tr>
+		<tr>
+			<td>Food</td>
+			<td><progress max="150" value="100" id="foodBar"></progress></td>
+		</tr>
+		</table>
+	</div>
+	<div id="planetData">
+		<p>Planet data:</p>
+		<table>
+		<tr>
+			<td>Type:</td>
+			<td id="planetType">Desert</td>
+		</tr>
+		<tr>
+			<td>Radio:</td>
+			<td id="radioType">Quiet</td>
+		</tr>
+		</table>
+	</div>
+	<canvas id="waveCanvas" width="800" height="200"></canvas>
+	<script src="lib/encounters.js"></script>
+	<script src="lib/utils.js"></script>
+	<script src="lib/vector.js"></script>
+	<script src="lib/wave.js"></script>
+	<script src="lib/planet.js"></script>
+    <script src="lib/boids.js"></script>
+</body>
+</html>
