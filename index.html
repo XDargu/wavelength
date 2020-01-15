@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
     <style>
         html, body {
@@ -19,10 +22,10 @@
 			cursor: pointer;
 		}
 		
-		#jumpToCoord:hover, #jumpRand:hover, #explorePlanet:hover {
+		/*#jumpToCoord:hover, #jumpRand:hover, #explorePlanet:hover {
 			background-color: #eee;
 			color: #333;
-		}
+		}*/
 		
 		#coordControls {
 			position: absolute;
@@ -30,34 +33,59 @@
 			top: 0;
 		}
 		
-		#coordControls input {
+		/*#coordControls input {
 			font-family: inherit;
 			background-color: #333;
 			color: #eee;
 			border: 1px solid #555;
 			padding-left: 2px;
-		}
+		}*/
 		
 		#resources {
 			position: absolute;
 			margin: 10px;
 			bottom: 30%;
+            font-size: 20px;
 		}
 		
 		#planetData {
+            min-width: 120px;
 			position: absolute;
 			margin: 10px;
 			top: 0;
 			right: 0;
 		}
-		
+        
+        .button {
+            display:inline-block;
+            padding:0.35em 1.2em;
+            border:0.1em solid #FFFFFF;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.12em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            font-weight:300;
+            color:#FFFFFF;
+            text-align:center;
+            transition: all 0.2s;
+            
+            background-color: #eee;
+			color: #333;
+        }
+        
+        #coordControls .button:hover {
+            color:#000000;
+            background-color:#FFFFFF;
+        }
+        
     </style>
 	<canvas id="canvas" width="800" height="400"></canvas>
 	<div id="coordControls">
 		Coordinates: <input type="text" id="addressInput" value="000000000"><br><br>
-		<input type="button" id="jumpToCoord" value="Jump to coordinates (10 fuel)"><br><br>
-		<input type="button" id="jumpRand" value="Jump randomly (5 fuel)"><br><br>
-		<input type="button" id="explorePlanet" value="Explore Planet (5 food)"><br>
+		<input type="button" class="button" id="jumpToCoord" value="Jump to coordinates (10 fuel)"><br><br>
+		<input type="button" class="button" id="jumpRand" value="Jump randomly (5 fuel)"><br><br>
+		<input type="button" class="button" id="explorePlanet" value="Explore Planet (5 food)"><br>
 	</div>
 	<div id="resources">
 		<table>
